@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <title><%= title%></title>
+        <link rel="stylesheet" type="text/css" href="/css/todo.css">
+        <script src="/js/category.js"></script>
+    </head>
+    <body>
+        <div class="whole_section">
+        <form action="/create_entry" method="POST">
+            <h1 class="main_heading">TODO LIST</h1>
+
+            <!-- -------Description Section------- -->
+            <div>
+                <h5 class="des_header">Description</h5>
+                <input type="text" name="Description" class="des_text" size="92"placeholder="What Do You Need To Do?">
+            </div>
+
+            <!-- --------Category Section----- -->
+            <div>
+                <h5 class="cat_header">Category</h5>
+                <select name="cat_sel" id="categories" class="sel_cat">
+                    <option value="Choose a Category" >Choose a Category</option>
+                    <option value="Personal">Personal</option>
+                    <option value="Work">Work</option>
+                    <option value="School">School</option>
+                    <option value="Cleaning">Cleaning</option>
+                    <option value="Others">Others</option>
+                </select>
+            </div>
+
+            <!-- -----Due Date Section--------- -->
+            <div>
+                <h5 class="date_header">Due Date</h5>
+                <input type="date" name="due_date" id="date" class="date_class" notimezone>
+            </div><br><br>
+
+            <!-- -------Add Button------------ -->
+            <div class="addb">
+            <input type="submit" value="Add Task" class="add_button">
+            <img src="/images/Plus_Sign.png" alt="Add Task" class="addtaskimg" >
+            </div>
+            <div class="delb">
+            <!-- --------Delete Button-------- -->
+            <a href="" class="anchor" id="a_tag"> <input type="button" value="Delete Tasks" class="delete_button"></a>
+            <img src="/images/delete1.png" alt="Delete Tasks" class="deletetaskimg">
+           </div>
+        </form>
+        <!-- ------------------- Form Ends------------------- -->
+        <br><hr class="bottom_hr">
+        <!-- ----------------------Tasks Display Section Begins--------------------- -->
+        <div class="disp_section">
+        <ul class="ul_list">
+            <% TODO_List.forEach(newEntry=> { %>       <!-- Iterating over TODO_List using iterator newEntry-->
+                <!-- ------------------------Displaying Tasks in a List--------------- -->
+                <li>
+                    <div>
+                        <input type="checkbox" name="list_item" class="item_checkbox" onchange="state_change('<%= newEntry._id %>')">
+                        <p class="disp_in display_description_class"><%= newEntry.Description %></p>
+                        <p class="disp_in display_category_class" id="disp_cat"><%= newEntry.Category %></p><br>
+                        <input type="image" src="/images/calendar.png" alt="Calendar" class="CalendarImg">
+                        <p class="disp_in display_date_class"><%= newEntry.Date %></p>
+                    </div>
+                    <hr>
+                </li>
+                <% });%>
+                <!-- %> -->
+        </ul>
+    </div>
+    </div>
+        <!-- --------------Display Tasks Section-------------- -->
+    </body>
+</html>

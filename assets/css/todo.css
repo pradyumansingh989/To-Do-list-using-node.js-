@@ -1,0 +1,273 @@
+body{
+    background-color: grey;
+}
+
+/* --------Todo List section starts-----------*/
+
+.whole_section{
+    text-align: center;
+    position: absolute;
+    width:40rem;
+    height: 35rem;
+    left: 27%;
+    overflow: hidden;
+    background-color: white;
+    overflow-y: auto;
+    border-style: groove;
+    border-color: black;
+    border-width: 10px;
+}
+
+/* TODO LIST heading */
+.main_heading{
+    animation: zoom 1.5s linear infinite alternate;
+}
+
+/* Defining Animation */
+@keyframes zoom{
+    0%{
+        transform: scale(1,1);
+    }
+    50%{
+        transform: scale(1.1,1.1);
+        color:red;
+    }
+    100%{
+        transform: scale(1,1);
+    }
+}
+
+/*-----------Description Section Starts---------------  */
+
+/* ------Heading------ */
+.des_header{
+    position: absolute;
+    z-index: 2;
+    margin-left: 0.8rem;
+    margin-top: -0.9rem;
+    text-transform: uppercase;
+}
+
+/* -------------Text-Box---------- */
+.des_text{
+    position: relative;
+    height: 3.9rem;
+    margin-top: -1rem;
+    font-weight: bold;
+    font-family: serif;
+    font-size: 15px;
+    text-transform: capitalize;
+    padding-left: 0.7rem; 
+    padding-top: 0.4rem;
+}
+.des_text:focus{                    /*Pseudo Class for focusing on Description section*/
+    background-color: yellow;
+}
+.des_text::placeholder{             /*Placeholder Selector for the textbox of Description section*/
+    font-weight: bold;
+    font-size: 14px;
+}
+.des_text:hover{                    /*Pseudo Class for hovering over Description section*/
+    cursor: pointer;
+    background-color: lightgray;
+}
+/*-----------Description Section Ends---------------  */
+
+/*-----------Category Section Begins----------------  */
+
+/* --------------Heading--------------- */
+.cat_header{
+    position: absolute;
+    z-index: 2;
+    margin-left: 0.8rem;
+    margin-top: 5px;
+    text-transform: uppercase;
+}
+
+/* ---------------Select List---------------- */
+.sel_cat{
+    font-weight: bold;
+    float: left;
+    padding-left: 0.5rem;
+    height: 3.5rem;
+    width: 50%;
+    padding-top: 13px;
+    font-size: 15px;
+    font-family: serif;
+}
+
+.sel_cat:focus-within{              /*Pseudo Class for focusing on Category List section*/
+    background-color: yellow;
+}
+.sel_cat:hover{                     /*Pseudo Class for hovering over Category List section*/
+    cursor: pointer;
+    background-color: lightgray;
+}
+
+/* --------Select List Section Ends---------- */
+
+/* --------- Due Date Section Begins ---------- */
+.date_header{
+    margin-left: 20.8rem;
+    position: absolute;
+    z-index: 2;
+    margin-top: 6px;
+    text-transform: uppercase;
+}
+
+.date_class{
+    width: 50%;
+    height: 3.5rem;
+    font-weight: bold;
+    padding-left: 0.6rem;
+    padding-top: 0.9rem;
+    font-size: 14px;
+    font-family: serif;
+}
+
+.date_class:focus-within{           /*Pseudo Class for focusing on due date section*/
+    background-color: yellow;
+}
+.date_class:hover{                  /*Pseudo Class for hovering over due date section*/
+    cursor: pointer;
+    background-color: lightgray;
+}
+/* ------------Due Date Section Ends------------ */
+
+/* ---------------Add Button-------------- */
+.addb{
+    display: inline-flex;
+}
+.add_button{
+    width: 9.3rem;
+    height: 3rem;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: serif;
+    background-color: #444444;
+    color: white;
+    margin-left: -140px;
+}
+.add_button:hover{                  /*Pseudo Class for hovering over add button*/
+    cursor: pointer;
+    color: red;
+    text-decoration-line: underline;
+    transition-duration: 0.6s;
+}
+.addtaskimg{                        /*Add Task button's image */
+    height: 16.5px;
+    width: 16.5px;
+    margin-top: 13.6px;
+    margin-left: -140px;
+}
+/* --------------------Add Button Section Ends--------------------------- */
+
+/* ---------------Delete Button-------------- */
+.delb{
+    display: inline-flex;
+    justify-content: space-between;
+}
+.delete_button{
+    width: 9.3rem;
+    height: 3rem;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: serif;
+    background-color: #EE351E;
+    color: white;
+    margin-top: -30px;
+    margin-left: 10px;
+}
+.delete_button:hover{       /*Pseudo Class for hovering over delete button*/
+    cursor: pointer;
+    color: black;
+    text-decoration-line: underline;
+    transition-duration: 0.6s;
+}
+.deletetaskimg{             /*Delete Task button's image */
+    height: 17.5px;
+    width: 17.5px;
+    margin-top: -1rem;
+    margin-left: -145px;
+}
+.anchor{            
+    margin-left: 40px;
+}
+/* ----------------------------Delete Button Section Ends---------------------------------- */
+
+/* Section Displaying The Tasks Begins */
+
+/*Display Section */
+
+.disp_section{                      
+    margin-left: -1rem;
+    text-align: left;
+    text-transform: capitalize;
+    font-weight: bold;
+    font-family: serif;
+    font-size: 1.1rem;
+}
+.ul_list{
+    list-style-type: none;
+}
+
+/*For displaying elements in the same line*/
+
+.disp_in{                           
+    display: inline-block;
+}
+
+/*For Editing Checkboxes */
+.item_checkbox{                     
+    height: 1.2rem;
+    width: 1.2rem;
+    cursor: pointer;
+    outline-color: black;
+    outline-style: groove;
+    outline-offset: -2px;
+}
+
+/* For Displaying Category */
+.display_category_class{
+    float: right;
+    margin-right: 2rem;
+    margin-top: 0.4rem;
+    width: 5rem;
+    text-align: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 1rem;
+    border-style: groove;
+    border-color: black;
+    border-radius: 15%;
+    background-color: yellow;
+}
+
+/* For Displaying Description */
+.display_description_class{
+    margin-left: 1rem;
+    margin-top: -1rem;
+    margin-bottom: -1rem;
+}
+
+/* For Displaying Calender */
+.calendarImg{
+    height: 25px;
+    width: 25px;
+    margin-left: 2.6rem;
+}
+
+/* For Displaying Date */
+.display_date_class{
+    font-size: 0.9rem;   
+    margin-bottom: -0.5rem;
+}
+
+/* For Displaying A Horizontal Line After Every Task */
+.bottom_hr{
+    margin-top: -0.5rem;
+    margin-bottom: -0.3rem;
+}
+/* ----------------------------Display Section Ends--------------------------- */
